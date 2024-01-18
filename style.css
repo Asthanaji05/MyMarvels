@@ -4,11 +4,9 @@ html,body{
     width:100%;
     cursor: pointer;
     height: 100%;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     flex-direction: column;
     display: flex;
-    justify-content: center;
-    align-items: center;
     font-weight: lighter;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -31,7 +29,7 @@ b{
     width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
-    grid-template-columns: 2fr 7fr 40fr 0.5fr;
+    grid-template-columns: 1fr 7fr 40fr 2fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 0;
     grid-column-gap:0;
@@ -104,6 +102,7 @@ b{
     background-color: #0000000e;
     display: flex;
     flex-direction: column;
+    margin-right: 1px;
 }
 .left2{
     grid-area: left2;
@@ -198,6 +197,37 @@ h4{
     background-repeat: no-repeat;
     font-size: medium;
 }
+@media screen and (max-width: 620px) {
+    .main1{
+      font-size: 2vw; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+    *{font-weight: 100;}
+    .nxt{
+        font-size: small;
+    }
+    b{
+        font-weight: 800;
+    }
+    .page2{
+        grid-template-columns: 1fr 7fr 40fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-row-gap: 0;
+        grid-column-gap:0;
+        grid-template-areas:
+        "left side1 main1"
+        "left side2 main1"
+        "left side3 main1"
+        "left side4 main1"
+        "left side5 main1"
+        "left side6 main1"
+        "left2 side7 main1"
+        "left2 side8 main1"
+        ;
+    }
+    .aside1,.aside2,.aside3,.aside4{
+        display: none;
+    }
+  }
 .active{
     border-right: 8px solid var(--color);
     box-shadow:  1px 0 80px var(--color);
@@ -207,7 +237,9 @@ h4{
     transform: scale(105%);
 }
 
-
+.side1,.side2,.side3,.side4,.side5,.side6,.side7,.side8{
+    font-size: small;
+}
 .side1{grid-area: side1;
     color: white;
     align-items: start;
@@ -289,7 +321,7 @@ background-size: cover;}
 .nxt{
     color: rgba(255, 255, 255, 0.712);
     background-color: var(--color);
-    font-size: large;
+    font-size: medium;
     width: max-content;
     padding: 1%;
     border-radius: 35px;
